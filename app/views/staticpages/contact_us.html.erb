@@ -1,0 +1,25 @@
+<p>Мы открыты к сотруднечеству и предложениям.</p>
+<p>Свяжитесь с нами если у вас возникли вопросы или 
+вы хотите присоеденится к нам в качестве критика.</p>
+
+<p><strong>email: info@critic.studio</strong></p>
+
+<p>Если у вас остались вопросы по схеме работы с сервысом, мы будем рады 
+ответить на ваши вопросы.</p>
+<p></p>
+
+<div class=cnt_us>
+<p><strong>Отправить сообщение:</strong></p>
+	<%= form_tag contact_us_path, method: :post, class: "form-inline" do %>
+		<%= label_tag "Ваше имя" %><br>
+		<%= text_field_tag :name, nil, class: "form-control", autofocus: true, size: 31, placeholder: "Петр Иванов", required: true %><br>
+		<%= label_tag "Телефон" %><br>
+		<%= telephone_field_tag :phone, nil, class: "form-control",size: 31, placeholder: "+ 7 (922) 555-1234", required: true %><br>
+		<%= label_tag "Email" %><br>
+		<%= email_field_tag :email, nil, class: "form-control", size: 31, placeholder: "ivanov@gmail.com", required: true %><br>
+		<%= label_tag "Сообщение" %><br>
+		<%= text_area_tag :message, nil, class: "form-control", cols:30, rows: 4, placeholder: "Как стать рецензентом?", required: true  %><br><br>
+		<%= submit_tag "Отправить", name: nil, class: "btn btn-info", id: "cont_us_btn" %>
+	<% end %>
+</div>
+

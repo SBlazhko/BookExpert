@@ -1,0 +1,21 @@
+<% @news.each do |n| %>
+	<% if n.id % 2 == 0 %>
+		<div class="media">
+		  <a class="media-left" href="#">
+		  	<%= image_tag n.image.url(:thumb) %>
+		  </a>
+		  <div class="media-body">
+		    <h4 class="media-heading"><%= n.title %></h4>
+		    <%= n.description %>
+		  </div><br>
+	<% else %>
+		  <div class="media-body">
+		    <h4 class="media-heading"><%= n.title %></h4>
+		    <%= n.description %>
+		  </div>
+			<a class="media-right" href="#">
+		  	<%= image_tag n.image.url(:thumb) %>
+		  </a>
+		</div><br>
+	<% end %>
+<% end %>

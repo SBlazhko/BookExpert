@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>BookExpert</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+	  <div class="container-fluid cnt_main">
+		  	<div class="col-md-2 sidenav">
+		  		<%= render 'layouts/shared/sidebar' %>
+		  	</div>
+				<div class="col-md-10 col-md-offset-2 bb">
+			  	<%= render 'layouts/shared/header' %>
+						<% if notice.present? %>
+							<p class="notice"><%= notice %></p>
+						<% elsif alert.present? %>
+				     	<p class="alert"><%= alert %></p>
+			     	<% end %>
+		    	<%= yield %>
+				</div>
+		</div>
+  </body>
+  
+	<footer class="navbar-fixed-bottom">
+  	<%= render 'layouts/shared/footer' %>
+  </footer>
+  
+</html>

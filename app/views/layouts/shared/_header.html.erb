@@ -1,0 +1,19 @@
+<nav class="navbar">
+  <div class="container-fluid">
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav pull-right">
+        <% if user_signed_in? %>
+		      <li><a class="glyphicon glyphicon-briefcase" href="/profile"> <%= current_user.name %></a></li>
+		      <li><a class="glyphicon glyphicon-log-out" href="/users/sign_out" data-method="delete"> Выйти</a></li>
+		      <% if current_user.role == 2 %>
+		      	<li><a class="glyphicon glyphicon-log-out" href="#">Статистика</a></li>
+		      	<li><a class="glyphicon glyphicon-log-out" href="#">Новый рецензент</a></li>
+		      <% end %>
+        <% else %>
+        	<li><a class="glyphicon glyphicon-log-in" href="/users/sign_in"> Вход</a></li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</nav>
+
