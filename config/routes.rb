@@ -10,5 +10,9 @@ Rails.application.routes.draw do
 	get "contact_us", to: "staticpages#contact_us"
 	post "contact_us", to: "staticpages#contact_us"
 	get "news", to: "news#index"
+
+	resources :news, only: [:create]
+	put "news/:id", to: "news#update", as: "update_news"
+	delete "news/:id",to: "news#destroy", as: "destoy_news"
 	
 end

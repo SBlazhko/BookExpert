@@ -11,6 +11,7 @@ class NewsController < ApplicationController
 
   def index
   	@news = News.all
+  	@newss = News.new
   end
 
   def update
@@ -20,7 +21,7 @@ class NewsController < ApplicationController
   end
 
   def destroy
-  	if News.find(params[:id]).destroy
+  	if News.find_by(id: params[:id]).destroy
   		redirect_to :back, notice: "Новость удалена"
   	end
   end
