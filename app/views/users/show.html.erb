@@ -1,10 +1,7 @@
-<div class="row">
-	<div class="col-md-2">
-		<%= image_tag @user.avatar.url(:medium), class: "img-circle" %>
-	</div>
-	<div class="col-md-10 sh_pr">
-		<h4 class="lead"><%= @user.name %></h4>
-		<%= link_to "Редактировать профиль", edit_user_registration_path %>
-		<hr>
-	</div>
-</div>
+<% if user_signed_in? && current_user.id == @user.id %>
+		<% if current_user.role == "user" %>	
+			<%= render 'users/user_profile' %>
+		<% elsif current_user.role == "reviwer" %>
+			<%= render 'users/reviwer_profile' %>
+		<% end %>
+<% end %>

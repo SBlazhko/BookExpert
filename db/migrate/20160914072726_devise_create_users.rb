@@ -32,6 +32,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.0]
 
       t.integer :role, default: 0
       t.string :name
+      t.integer :rating, default: 0
 
       t.timestamps null: false
     end

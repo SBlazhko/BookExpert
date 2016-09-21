@@ -1,17 +1,17 @@
-<%#if current_user.role == 2 %>
+<%if user_signed_in? && current_user.role == "admin" %>
 	<button type="button" class="btn btn-info btn-md btn-block" data-toggle="modal" data-target="#createModal">Добавить новость</button>
-<%# end %>
+<% end %>
 
 <% @news.each do |n| %>
 
 	<div class="media">
 	  <a class="media-left" href="#">
-	  	<%= image_tag n.image.url(:medium) %>
+	  	<%= image_tag n.image.url(:thumb) %>
 	  </a>
 	  <div class="media-body">
 	    <h4 class="media-heading"><%= n.title %></h4>
 	    <%= n.description %>
-		    <%if current_user.role == 2 %>
+		    <%if user_signed_in? && current_user.role == "admin" %>
 			    <hr>
 	    		<%= link_to "Удалить", destoy_news_path(n), method: :delete, class: "btn btn-danger" %>
 					<button type="button" class="btn btn-warning btn-md" data-toggle="modal" data-target="#updateModal">Изменить новость</button>

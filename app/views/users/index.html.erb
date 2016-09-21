@@ -1,0 +1,14 @@
+
+<% @reviwers.each do |r| %>
+<div style="display:inline-block; width:49%">
+		<%= image_tag r.avatar.url(:thumb), class: "img-circle", style:"float:left" %>
+
+		<h4><%= link_to "#{r.name}", reviwer_show_path(r) %></h4>
+		<% if r.biography %>
+			<h6><%= r.biography.slogan %></h6>
+		<% end %>
+			<h6>Рейтинг: <%= r.rating %> (10)</h6>
+		<h5><%= link_to "Отправить работу" %></h5> 
+</div>
+
+<% end %>

@@ -1,0 +1,10 @@
+<%= form_for @biography, url: add_biography_path do |f| %>
+	<%= f.label "Вступительное слово" %>
+	<%= f.text_area :slogan, class: "form-control" %>
+	<%= f.label "Опыт работы" %>
+	<%= f.text_area :work_experiance, class: "form-control" %>
+	<%= f.label "Библиография" %>
+	<%= f.text_area :bibliography, class: "form-control" %>
+	<%= f.hidden_field :user_id, value: @user.id %>
+	<%= f.submit "Добавить биографию" %>
+<% end %>

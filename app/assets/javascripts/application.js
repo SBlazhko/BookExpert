@@ -12,26 +12,25 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
+// require turbolinks
 //= require_tree .
 //= require bootstrap-sprockets
 
-$(document).ready(ready);
-$(document).on('turbolinks:load', ready);
+// $(document).ready(ready);
+// $(document).on('turbolinks:load', ready);
 
-
-	function ready() {
+$(document).ready(function(){
 		
 		$('.n_pas_can').click(function(){
 			$('.ch_pass').slideToggle("slow");
 			$('.n_pas_can').val($(".n_pas_can").val() == "Новый пароль" ? "Не менять пароль" : "Новый пароль");
 			$('.n_pas_can').html($(".n_pas_can").val());
 		});
+});
 	
 	// $('form :input').change(function(){
 	// 	checkParams();	
 	// });
-}
 
 // function checkParams() {
 //   var name = $('#name').val();

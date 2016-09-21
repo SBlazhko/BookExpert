@@ -18,7 +18,6 @@ ActiveRecord::Schema.define(version: 20160914101333) do
   create_table "biographies", force: :cascade do |t|
     t.string   "work_experiance"
     t.string   "bibliography"
-    t.integer  "rating"
     t.string   "slogan"
     t.integer  "user_id"
     t.datetime "created_at",      null: false
@@ -64,6 +63,7 @@ ActiveRecord::Schema.define(version: 20160914101333) do
     t.string   "unconfirmed_email"
     t.integer  "role",                   default: 0
     t.string   "name"
+    t.integer  "rating",                 default: 0
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
     t.string   "avatar_file_name"
